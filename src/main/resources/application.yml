@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+  #微信公众号配置
+wxpay:
+  appid: wxf384b69047700f62
+  appsecret: 9b035bb77fb695cbe5d1b16c6b45a655
+
+
+  #spring数据源
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/xdclass?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    #type: com.alibaba.druid.pool.DruidDataSource
+
+  #mybatis配置
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    #增加打印sql语句 一般用于本地开发测试
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
