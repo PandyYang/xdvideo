@@ -1,4 +1,4 @@
-package net.xdclass.xdvideo.controller;
+package net.xdclass.xdvideo.controller.admin;
 
 import net.xdclass.xdvideo.domain.Video;
 import net.xdclass.xdvideo.service.VideoService;
@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.*;
  * @author Pandy
  */
 @RestController
-@RequestMapping("/api/v1/video")
-public class VideoController {
-
+@RequestMapping("/admin/api/v1/video")
+public class VideoAdmin {
     @Autowired
     private VideoService videoService;
 
@@ -24,7 +23,7 @@ public class VideoController {
     @GetMapping("page")
     public Object pageVideo(@RequestParam(value = "page",defaultValue = "1")int page,
                             @RequestParam(value = "size",defaultValue = "10")int size
-                            ){
+    ){
         return videoService.findAll();
     }
 
@@ -65,5 +64,4 @@ public class VideoController {
     public Object save(@RequestBody Video video){
         return videoService.save(video);
     }
-
 }
